@@ -1,0 +1,222 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f4f4f9;
+}
+  
+  /* Sidebar container */
+  .sidebar {
+    width: 200px; /* Adjust width to suit your design */
+    height: 100vh;
+    background-color: #eff3f1ef;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    position: fixed;
+    left: 0;
+    border:rgb(146, 146, 146) 1px solid;
+    border-top: none;
+    gap: 20px;
+  }
+
+  #mp{
+    margin-right: 90px;
+    font-size: 20px;
+  } 
+  /* Logo styling */
+  .logo img {
+    width: 140px; /* Adjust logo size */
+    color: #184233ef;
+    height: auto;
+    margin-right: 55px;
+    margin-bottom: 30px; /* Add spacing from logo to navigation links */
+  }
+  
+  /* Styling for the links */
+  .nav-links a {
+    width: 180px;
+    color:#184233ef;
+    text-decoration: none;
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-align: center;
+    display: block;
+    padding: 10px;
+    
+    border-radius: 0%;
+    transition: background-color 0.3s ease;
+  }
+
+  
+  .nav-links a:hover {
+    background-color:rgb(159, 159, 159); /* Light hover effect */
+  }
+  
+  /* Content area styling */
+  .content {
+    margin-left: 205px; /* Same width as sidebar */
+    /* padding: 20px; */
+    flex-grow: 1;
+  }
+  
+  a img{
+    width: 20px;
+    
+  }
+#section2 {
+  background-color: #184233ef;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  left:100px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width:87%;
+  margin-left:200px;
+  height:100vh;
+   /* Push content to the right of the sidebar */
+}
+
+.card-container {
+  display: flex;
+  gap: 25px;
+  overflow-x: auto; /* Allow horizontal scrolling if needed */
+  padding: 20px 0;
+  width: 100%;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 300px; /* Fixed width for each card */
+  transition: transform 0.3s;
+  flex-shrink: 0; /* Prevent cards from shrinking */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-image {
+  width: 100%;
+  height: 200px; /* Adjust height for consistency */
+  object-fit:cover;
+}
+
+
+
+.card-content h3 {
+  margin: 10px ;
+  font-size: 16px;
+  color: #333;
+}
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  max-width: 400px;
+}
+
+.day {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  background-color: #fff;
+  transition: background-color 0.2s;
+}
+
+.day:hover {
+  background-color: #e0f7fa;
+}
+
+.day.selected {
+  background-color: #00796b;
+  color: #fff;
+}
+
+/*.note-section {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 400px;
+}
+
+textarea {
+  width: 100%;
+  left: 200px;
+  height: 100px;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #00796b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #004d40;
+}
+*/
+/* Styling for the note section to be positioned to the right */
+h1{
+  color: #e0f7fa;
+}
+.note-section {
+  display: none; /* Initially hidden */
+  position: absolute;
+  top: 400px;
+  left: 550px; /* Position it to the right of the calendar */
+  width: 300px;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #00796b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #004d40;
+}

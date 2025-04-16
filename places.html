@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravSolo</title>
+    <link rel="stylesheet" href="mypackage1.css">
+</head>
+<body>
+    <div class="top-links">
+        <a href="admin.html">Home</a>
+        <a href="explore.html">Explore</a>
+    </div>
+
+
+    <div class="page-wrapper">
+        <div class="image-section">
+            <img src="./images/pn.jpg" alt="Travel Background">
+            <div class="overlay">
+                <h1>Add <br>Places..</h1>
+            </div>
+        
+        </div>
+        <div class="form-container">
+            <form action="places.php" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="placename">Place name</label>
+                    <input type="text" id="placename" name="placename" placeholder="Enter place" required>
+                </div>
+                <div class="form-group">
+                    <label for="description"> Description</label>
+                    <textarea id="description" name="description" rows="4" placeholder="Provide a brief summary" required></textarea>
+                </div>
+
+                
+                <div class="form-group">
+                    <label for="introduction">Introduction</label>
+                    <input type="text" id="introduction" name="introduction" placeholder="Enter introduction" required>
+                </div>
+                <div class="form-group">
+                    <label for="history">History</label>
+                    <textarea id="history" name="history" rows="3" placeholder="historical places"></textarea>
+                </div>
+
+                
+                <div class="form-group">
+                    <label for="places">Places tov visit</label>
+                    <textarea id="places" name="places" rows="6" placeholder="Provide the places list to visit"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="food">Food</label>
+                    <input type="text" id="food" name="food" placeholder="Enter famous food points" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="media">Upload Photos</label>
+                    <input type="file" id="media" name="media" multiple>
+                </div>
+
+                
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input type="text" id="location" name="location" placeholder="Enter exact location" required>
+                </div>
+                
+            
+                <button type="submit" class="submit-btn">Add place</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

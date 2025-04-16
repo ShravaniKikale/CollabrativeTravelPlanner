@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travsolo</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="./images/logoBlack.png" alt="Logo" />
+            </div>
+        <h3>Admin</h3>
+        
+        <div class="nav-links">
+            <a href="fetchLogin.php"><img src="./symbols/account.png" alt=""> Login Users</a>
+            <a href="fetchRegistration.php"><img src="./symbols/registered.png" alt=""> Registered Users</a>
+            <a href="places.html"><img src="./symbols/signboard.png" alt=""> Add Places</a>
+            <a href="fetchPackage.php"><img src="./symbols/notebook.png" alt=""> User Packages</a>
+            <a href="front.html"><img src="./symbols/home.png" alt=""> Home</a>
+
+        </div>
+        </div>
+            <div id="section2">
+                    <h1 style="color: white; text-align: center; padding: 20px; font-style:oblique;">Best Places to Visit..</h1>
+                    <div class="card-container">
+                        <div class="card">
+                            <img src="./images/pic2.png"alt="Place 1" class="card-image">
+                            <div class="card-content">
+                                <h3>Manali..</h3>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="./images/pic1.png" alt="Place 2" class="card-image">
+                            <div class="card-content">
+                                <h3>Gokarna..</h3>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="./images/pic3.png" alt="Place 3" class="card-image">
+                            <div class="card-content">
+                                <h3>Bali..</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <br><h1>Plan your days..</h1><br>
+                        <div class="calendar" id="calendar"></div>
+                        <div class="note-section" id="note-section" style="display: none;">
+                            <h3>Notes for <span id="selected-date"></span></h3>
+                            <textarea id="note-input" placeholder="Write your note here..."></textarea>
+                            <script>
+                                document.addEventListener("DOMContentLoaded", () => {
+                                const saveNoteButton = document.querySelector("button");
+                                const noteSection = document.querySelector(".note-section");
+                                saveNoteButton.addEventListener("click", () => {
+                                    noteSection.style.display = "block"; // Show the note section
+                                });
+                                });
+                            </script>
+                            <button onclick="saveNote()">Save Note</button>
+                        </div>
+                        <script>
+                            const calendar = document.getElementById('calendar');
+                            const noteSection = document.getElementById('note-section');
+                            const selectedDateElement = document.getElementById('selected-date');
+                            const noteInput = document.getElementById('note-input');
+                    
+                            const notes = {}; // Object to store notes for each date
+                    
+                            // Generate calendar days (Example: 30 days for simplicity)
+                            for (let i = 1; i <= 30; i++) {
+                                const day = document.createElement('div');
+                                day.className = 'day';
+                                day.textContent = i;
+                                day.dataset.date = `2025-01-${String(i).padStart(2, '0')}`;
+                    
+                                day.addEventListener('click', () => {
+                                    document.querySelectorAll('.day').forEach(d => d.classList.remove('selected'));
+                                    day.classList.add('selected');
+                    
+                                    const date = day.dataset.date;
+                                    selectedDateElement.textContent = date;
+                                    noteInput.value = notes[date] || '';
+                                    noteSection.style.display = 'block';
+                                });
+                    
+                                calendar.appendChild(day);
+                            }
+                    
+                            function saveNote() {
+                                const date = selectedDateElement.textContent;
+                                const note = noteInput.value;
+                                notes[date] = note;
+                                alert(`Note saved for ${date}`);
+                            }
+                        </script>
+                
+            </div>
+        
+</body>
+</html>
