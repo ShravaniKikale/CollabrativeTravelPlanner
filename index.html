@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravSolo</title>
+    <style>
+        /* General styles */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #2a4d44; /* Adjusted for visual contrast */
+        }
+
+        #container {
+            text-align: center;
+        }
+
+        /* Logo styles */
+        img {
+            max-width: 200px; /* Make the logo smaller */
+            height: auto;
+        }
+
+        /* Progress bar container */
+        #myBar {
+            width: 70%; /* Adjust width as needed */
+            height: 20px;
+            margin: 20px auto;
+            background-color: #f3f3f3;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        /* Progress bar */
+        #progress-bar {
+            width: 0%; /* Initial width of progress */
+            height: 100%; /* Full height of the container */
+            background-color: #4abf4a;
+            transition: width 0.1s linear; /* Smooth animation */
+        }
+
+        /* Button styles */
+        .getstart {
+            padding: 10px 20px;
+            background-color:#528578;
+            border-radius: 30px;
+            text-decoration: none;
+            color: rgb(241, 232, 232);
+            border: none;
+            
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img src="./images/1-removebg-preview.png" alt="TravSolo Logo">
+        <br>
+        <button class="getstart" onclick="move()">GET STARTED</button> 
+        <div id="myBar">
+            <div id="progress-bar"></div>
+        </div>
+    </div>
+    <script>
+        function move() {
+            var barContainer = document.getElementById("myBar"); // Get the progress bar container
+            var progressBar = document.getElementById("progress-bar"); // Get the green bar element
+
+            // Show the progress bar container
+            barContainer.style.display = "block";
+
+            // Start animating the progress bar
+            var width = 0;
+            var id = setInterval(frame, 20); // Set the interval for the animation
+
+            function frame() {
+                if (width >= 100) {
+                    clearInterval(id); // Stop the animation when width reaches 100%
+                    window.location.href="front.html";
+                } else {
+                    width++;
+                    progressBar.style.width = width + '%'; // Increase the width
+                }
+            }
+        
+        }
+    </script>
+</body>
+</html>
